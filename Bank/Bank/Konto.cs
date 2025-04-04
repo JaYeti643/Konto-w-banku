@@ -20,11 +20,11 @@ namespace Bank
             this.bilans = bilansNaStart;
         }
 
-        public string Nazwa
+        public  string Nazwa
         {
             get { return klient; }
         }
-        public decimal Bilans
+        public virtual decimal Bilans
         {
             get { return bilans; }
         }
@@ -33,7 +33,7 @@ namespace Bank
             get { return zablokowane; }
         }
 
-        public void Wplata(decimal kwota)
+        public virtual void Wplata(decimal kwota)
         {
            if(zablokowane)
             {
@@ -45,7 +45,7 @@ namespace Bank
             }
             bilans += kwota;
         }
-        public void Wyplata(decimal kwota)
+        public virtual void Wyplata(decimal kwota)
         {
             if (zablokowane)
             {
